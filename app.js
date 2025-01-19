@@ -1,8 +1,8 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. 
 // Aquí deberás desarrollar la lógica para resolver el problema.
 
-// Variables
-//const inputAmigo = document.getElementById("amigo");
+// Realizado por Oscar D. Caceres
+// Curso Alura Latam
 // Array para almacenar los nombres
 let listaNombres = [];
 
@@ -15,8 +15,6 @@ function asignarTextoElemento(elemento, texto){
 function agregarAmigo() {
     let nombreAmigo = document.querySelector('#amigo').value;
     
-    console.log(nombreAmigo);
-    
     if (nombreAmigo == null || nombreAmigo == ''){
 
         alert("Por favor, ingresa un nombre válido.");
@@ -25,9 +23,7 @@ function agregarAmigo() {
 
         listaNombres.push(nombreAmigo);
         limpiarCaja();
-        //asignarTextoElemento('#listaAmigos', nombreAmigo);
         actualizarListaAmigos();        
-        console.log(listaNombres);
 
     }
 } 
@@ -42,15 +38,16 @@ function actualizarListaAmigos() {
     });
 }
 
-// donde se realiza un sorteo aleatorio de la lista listaNombres
+// Funcion donde se realiza un sorteo aleatorio de la lista listaNombres verificando que la 
+// lista al menos contenga un integrante
 function sortearAmigo() {
     if (listaNombres.length === 0) {
         alert("La lista está vacía. Por favor, agregar nombres a la lista primero.");
         return;
       }
 
-      const indiceAleatorio = Math.floor(Math.random() * listaNombres.length);
-      const amigoSorteado = listaNombres[indiceAleatorio];
+      indiceAleatorio = Math.floor(Math.random() * listaNombres.length);
+      amigoSorteado = listaNombres[indiceAleatorio];
       resultado.innerHTML = `El amigo secreto es: <strong>${amigoSorteado}</strong>`;
 }
 
